@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 PI = 3.14 #sempre letras maiusculas, valor nao eh alterado
 numero = 1
 dolar = 3.23

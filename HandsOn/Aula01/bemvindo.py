@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 # git add --all
 
 # git commit -m "Enviando arquivos"

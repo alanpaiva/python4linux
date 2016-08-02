@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 nome = "Guido Van Rossum"
 idade = 59
 
