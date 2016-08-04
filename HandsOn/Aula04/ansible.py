@@ -1,31 +1,41 @@
 #!/usr/bin/python
 #arquivo ansible.py eh para automatizar tarefas
 
+import sys
+
 from Modulos.SSH import executa_comando
 from Modulos.usuarios import cadastrar_usuario, listar_usuario, remover_usuario
+from Modulos.servidores import cadastrar_servidor, listar_servidor, remover_servidor
 
 def switch(x):
     try:
-        dicionario_funcoes ={1:cadastraada: "))
-ValueError: invalid literal for int() with base 10: r_usuario,
+        dicionario_funcoes ={1:cadastrar_usuario,
                              2:listar_usuario,
-                             3:remover_usuario}
+                             3:remover_usuario,
+                             4:cadastrar_servidor,
+                             5:listar_servidor,
+                             6:remover_servidor,
+                             7:sair}
         dicionario_funcoes[x]() 
     except Exception as e:
         print "Opcao invalida",e
 
 def menu():
-    print "1- Cadastrar sysadmin"
-    print "2- Listar sysadmins"
-    print "3- Remover sysadmin"
+    print "1- Cadastrar usuario"
+    print "2- Listar usuario"
+    print "3- Remover usuario"
     print "4- Cadastrar servidores"
     print "5- Listar servidores"
     print "6- Remover servidor"
-    print "7- Sair!"
+    print "7- Sair"
+
+def sair():
+    sys.exit()
 
 if __name__ == '__main__': #defini 2 comportamento dif = 1- linha comando 2-
     while True:
-        opcao = int(raw_input("Digite a opcao desejada: "))
+        menu()        
+        opcao = int(raw_input("<< Digite a opcao desejada: "))
         switch(opcao)
 
 executa_comando ("ip a")
