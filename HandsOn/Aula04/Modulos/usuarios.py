@@ -20,7 +20,9 @@ def cadastrar_usuario(): #sempre chama o dicionario em funcao da funcao
     usuario = {} #dicionario recebe user e pass. vazio mesmo         
     usuario ['login'] = raw_input("Digite o login do usuario: ")
     # {"login":"alan"}
-    usuario ['senha'] = raw_input("Digite sua senha: ")
+    usuario ['senha'] = raw_input("Digite sua senha: 
+
+")
     # {"login":"alan","senha":"123"}
     banco ['usuarios'].append(usuario)#vai no json e add usuario no final
     # {"usuarios":[{"login":"alan","senha":"123"}]}

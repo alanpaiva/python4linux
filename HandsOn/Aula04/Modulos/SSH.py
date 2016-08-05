@@ -10,7 +10,7 @@ def executa_comando(cmd):
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())#p.nw servers
 
     #conecta na maquina:
-    client.connect(hostname="127.0.0.1",username="root",password="4linux")
+    client.connect(hostname="192.168.0.2",username="forlinux",password="4linux")
     #executa o comando:
     stdin,stdout,stderr = client.exec_command(cmd)
 
