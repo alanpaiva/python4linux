@@ -8,6 +8,11 @@ Digite "help" para ajuda.
 postgres-# \c loja2
 Você está conectado agora ao banco de dados "loja2" como usuário "postgres".
 loja2=# 
+
+Criar usuario para banco:
+postgres=# create user loja with password '4linux';
+CREATE ROLE
+
 loja2=# grant ALL privileges on produtos to loja;
 GRANT
 loja2=# grant ALL privileges on produtos_id_seq to loja;

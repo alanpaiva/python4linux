@@ -1,0 +1,93 @@
+#!/usr/bin/python
+
+###Cardinalidade
+
+1 para 1:
+    1 -> 1
+1 para Muitos: 
+    1 -> N
+Muitos para Muitos: (usual para relacionar usuarios e grupos)
+    N -> N
+
+###Veremos dois exemplos:
+1 -> N (relacao de funcionarios e dependentes)
+N -> N 
+
+forlinux@developer  ~/4520-Python/HandsOn/Aula07 (master) $ python funcionarios.py 
+Traceback (most recent call last):
+  File "funcionarios.py", line 4, in <module>
+    from sqlalchemy import create_engine
+ImportError: cannot import name create_engine
+forlinux@developer  ~/4520-Python/HandsOn/Aula07 (master) $ ls
+admssh.py     banco.db  funcionarios.py  model.py   Modulos
+anotacoes.py  Cookbook  __init__.py      model.pyc  sqlalchemy.pyc
+
+
+
+class Token(Base):
+    __tablename__ = 'token'
+    id = Column(Integer,primary_key=True)
+    usuario_id = Column(Integer,ForeignKey("usuario.id"))
+    servidor_id = Column(Integer,ForeignKey("servidor.id"))
+    token = Column(String,default=str(randint(1000,9999)))
+    motivo = Column(String,nullable=False)
+    servidor = relationship("Servidor")
+    usuario = relationship("Usuario")
+
+CREATE TABLE token (
+	id INTEGER NOT NULL, 
+	usuario_id INTEGER, 
+
+
+### Postgree conexao
+#psql -U loja -h 127.0.0.1 loja2 -W
+	servidor_id INTEGER, 
+	token VARCHAR, 
+	motivo VARCHAR NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(usuario_id) REFERENCES usuario (id), 
+	FOREIGN KEY(servidor_id) REFERENCES servidor (id)
+);
+sqlite> 
+#forlinux@developer  ~/4520-Python/HandsOn/Aula07 (master) $ rm -r sqlalchemy.pyc 
+
+
+#################################
+######### MONGO DB ############## mais p. gravar dados temporarios
+#################################
+
+##acessar o shell: mongo
+##listar bancos:  > show dbs;
+                  > show databases;
+##selecionar banco: use <nome_banco>;
+##listar tabelas: > show collections;
+                  > show tables;
+cursos
+system.indexes
+##select na table: > db.cursos.find({})
+                   > db.cursos.find({}).pretty()
+##filtrar:         > db.cursos.find({"curso":"4501-PHP"}).pretty();
+
+##criar novo banco: use curso_python
+
+##inserir dados: 
+> show collections;
+> db.aulas.insert({"curso":"python","aula":08,"assunto":"mongDB"})
+> db.aulas.find()
+{ "_id" : ObjectId("57aa77b61a199f24ac17f148"), "curso" : "python", "aula" : 8, "assunto" : "mongDB" }
+
+##update: (erroneadamente)
+db.aulas.update({"curso":"python"},{"curso":"PHP"})
+1 parametro de busca
+2 dicionario destino
+
+##update: (corretamente)
+db.aulas.update({"curso":"python"},{"$set":{"curso":"PHP"}})
+
+##remover dados:
+db.aulas.remove({"",""})
+
+
+
+
+

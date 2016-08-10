@@ -25,6 +25,7 @@ class Usuario(Base): #criando tabelas
     id = Column(Integer, primary_key=True) #id = primarykey
     nome = Column(String)
     senha = Column(String)
+    servidor = relationship("Servidor",secondary=analista_servidor)
 
 class Servidor(Base): #criando tabelas
     __tablename__ = 'servidor' #cria classe
