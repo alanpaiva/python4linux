@@ -17,7 +17,8 @@ class AdmSSH:
                                  4:servidor_obj.cadastrar,
                                  5:servidor_obj.listar,
                                  6:servidor_obj.remover,
-                                 7:self.sair
+                                 7:self.sair,
+                                 8:servidor_obj.exec_comando_servidor
                                 }
             dicionario_funcoes[x]() 
         except Exception as e:
@@ -31,6 +32,7 @@ class AdmSSH:
         print "5- Listar servidores.."
         print "6- Remover servidor.."
         print "7- Sair.."
+        print "8- Executar comando.."
         print ""
 
     def sair(self):

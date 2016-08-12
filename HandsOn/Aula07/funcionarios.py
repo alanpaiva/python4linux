@@ -67,6 +67,7 @@ if __name__ == '__main__':
         print "Dependente: ",d.nome
 
     # Remover dependente (listar e remover como qualquer outro dado:
+    # removeu o dependente: Haroldo
 #    dependente = session.query(Dependente).filter_by(id=1).first()
 #    session.delete(dependente)
 #    session.commit()
