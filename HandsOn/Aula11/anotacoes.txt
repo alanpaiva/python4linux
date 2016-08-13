@@ -1,0 +1,31 @@
+# Apos rodar o model.py, verificar no banco se os dados foram criados:
+
+forlinux@developer  ~ $ sqlite3 4520-Python/HandsOn/Aula11/banco.db 
+SQLite version 3.8.7.1 2014-10-29 13:59:56
+Enter ".help" for usage hints.
+
+sqlite> .tables
+client   product  service
+
+sqlite> select * from client;
+1||111.111.111-11|Tecnologia
+
+sqlite> select * from product;
+1|||Ubuntu_Hosting
+
+sqlite> select * from service;
+1|1|1|2016-08-12 20:40:18.307235|
+
+
+# depois vai no Mongo:
+
+forlinux@developer  ~ $ mongo
+MongoDB shell version: 2.4.10
+connecting to: test
+> use dexterops
+switched to db dexterops
+> db.queue.insert({"_id":1,"status":0})
+> db.queue.find()
+{ "_id" : 1, "status" : 0 }
+> 
+
